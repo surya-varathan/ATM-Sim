@@ -1,4 +1,3 @@
-package com.danix.code.smell.example001;
 
 import javax.annotation.Nonnull;
 

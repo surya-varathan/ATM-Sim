@@ -1,8 +1,4 @@
-package com.danix.code.smell.example001;
 
-/**
- * @author  danix
- */
 public class Person extends Customer {
     protected String surname;
 
