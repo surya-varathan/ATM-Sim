@@ -1,4 +1,3 @@
-
 public class Person extends Customer {
     protected String surname;
 

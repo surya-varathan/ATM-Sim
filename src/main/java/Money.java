@@ -1,11 +1,7 @@
-
 import javax.annotation.Nonnull;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-/**
- * @author danix
- */
 public class Money {
 
     public static final String EUR_CURRENCY = "EUR";

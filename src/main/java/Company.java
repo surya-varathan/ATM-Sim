@@ -1,4 +1,3 @@
-
 public class Company extends Customer {
 
     protected double companyOverdraftDiscount = 1;

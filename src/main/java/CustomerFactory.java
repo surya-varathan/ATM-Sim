@@ -1,7 +1,3 @@
-
-/**
- * @author danix
- */
 public class CustomerFactory {
 
     public Customer createCompany(String name, String email, Account account, double companyOverdraftDiscount) {

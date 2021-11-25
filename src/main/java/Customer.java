@@ -1,4 +1,3 @@
-
 public abstract class Customer {
 
     protected String name;

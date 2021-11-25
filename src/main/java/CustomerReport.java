@@ -1,11 +1,6 @@
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import javax.annotation.Nonnull;
-
-/**
- * @author  danix
- */
 public class CustomerReport {
 
     private final Customer customer;

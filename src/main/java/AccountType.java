@@ -1,7 +1,3 @@
-
-/**
- * @author danix
- */
 public class AccountType {
     private boolean premium;
 
