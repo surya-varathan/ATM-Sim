@@ -1,3 +1,8 @@
+package com.danix.code.smell.example001;
+
+/**
+ * @author  danix
+ */
 public class Account {
 
     private String iban;
@@ -6,13 +11,11 @@ public class Account {
 
     private int daysOverdrawn;
 
-    private double money;
-
-    private String currency;
+    private Money money;
 
     private Customer customer;
 
-    public Account(AccountType type, int daysOverdrawn) {
+    public Account(final AccountType type, final int daysOverdrawn) {
         super();
         this.type = type;
         this.daysOverdrawn = daysOverdrawn;
@@ -29,11 +32,14 @@ public class Account {
     private double overdraftCharge() {
         if (type.isPremium()) {
             double result = 10;
-            if (getDaysOverdrawn() > 7)
+            if (getDaysOverdrawn() > 7) {
                 result += (getDaysOverdrawn() - 7) * 1.0;
+            }
+
             return result;
-        } else
+        } else {
             return getDaysOverdrawn() * 1.75;
+        }
     }
 
     public double overdraftFee() {
@@ -44,7 +50,6 @@ public class Account {
         }
     }
 
-
     public int getDaysOverdrawn() {
         return daysOverdrawn;
     }
@@ -53,23 +58,19 @@ public class Account {
         return iban;
     }
 
-    public void setIban(String iban) {
+    public void setIban(final String iban) {
         this.iban = iban;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(final Money money) {
         this.money = money;
-    }
-
-    public double getMoney() {
-        return money;
     }
 
     public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(final Customer customer) {
         this.customer = customer;
     }
 
@@ -77,15 +78,15 @@ public class Account {
         return type;
     }
 
-    public String printCustomer() {
-        return customer.getName() + " " + customer.getEmail();
+    public boolean isOverdraft() {
+        return money.getAmount() < 0;
     }
 
-    public String getCurrency() {
-        return currency;
+    public void substract(final Money money) {
+        this.money = this.money.substract(money);
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public double getMoneyAmount() {
+        return money.getAmount();
     }
 }
